@@ -28,9 +28,11 @@ function changeBGImage() {
     puzzleBoard.style.backgroundImage = `url(images/backGround${this.id}.jpg)`;
     dropZones.forEach(zone => {while (zone.firstChild) {
         puzzleContainer.appendChild(zone.firstChild);
-    }
-    }
-    )
+	}})
+}
+
+function reset(){
+	dropZones.forEach(zone => {while (zone.firstChild) {puzzleContainer.appendChild(zone.firstChild);}})
 }
 
 function handleStartDrag() {
@@ -70,3 +72,5 @@ dropZones.forEach(zone => zone.addEventListener('dragover', handleDragOver));
 
 // add the drop event handling
 dropZones.forEach(zone => zone.addEventListener('drop', handleDrop));
+
+document.querySelector('#resetBut').addEventListener('click', reset)

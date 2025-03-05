@@ -10,6 +10,7 @@ let theButtons = document.querySelectorAll('#buttonHolder img'),
 puzzleBoard = document.querySelector('.puzzle-board'),
 puzzlePieces = document.querySelectorAll('.puzzle-pieces img'),
 dropZones = document.querySelectorAll('.drop-zone'),
+puzzleContainer = document.querySelector('.puzzle-pieces'),
 	// store the dragged piece in a global variable
 	// because we need it in the handleDrop function
     draggedPiece;
@@ -25,6 +26,11 @@ function changeBGImage() {
 
 	// bug fix #2 should go here. it's at most 3 lines of JS code.
     puzzleBoard.style.backgroundImage = `url(images/backGround${this.id}.jpg)`;
+    dropZones.forEach(zone => {while (zone.firstChild) {
+        puzzleContainer.appendChild(zone.firstChild);
+    }
+    }
+    )
 }
 
 function handleStartDrag() {

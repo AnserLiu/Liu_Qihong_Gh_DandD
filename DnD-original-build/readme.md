@@ -1,4 +1,4 @@
-# Music Mixer Project
+# Drag and Drop debugging
 
 This is the repository for debugging the DandD game.
 
